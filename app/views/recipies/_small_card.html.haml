@@ -1,0 +1,7 @@
+.recipe-small-card
+  %h2
+    = recipe.title
+  .description
+    %img(src="#{recipe.image_link}")
+    %br
+    = link_to 'Show more...', show_recipe_path(recipe)

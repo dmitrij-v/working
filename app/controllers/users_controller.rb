@@ -3,6 +3,5 @@ class UsersController < ApplicationController
 
   def profile
     @user = current_user
-    @notes = current_user.notes
   end
 end

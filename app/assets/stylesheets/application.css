@@ -24,6 +24,16 @@ body {
   align-items: center;
   border-bottom: 1px solid grey;
 }
+
 .logo, .user-page {
   margin: 0 8px;
+}
+.alert-messages {
+  width: 100%;
+}
+.main-stream {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }

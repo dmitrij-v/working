@@ -11,8 +11,22 @@
 
   <body>
     <%= render partial: 'partials/header', locals: { user: current_user } %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <%= render partial: 'partials/errors', locals: { notice: notice, alert: alert } %>
+
+    <div class="main-stream">
+      <% if content_for?(:right) %>
+        <div class="column-right">
+          <%= yield :right %> 
+        </div>
+      <% end %>
+      <div class="column-middle">
+        <%= yield %>
+      </div>
+      <% if content_for?(:left) %>
+        <div class="column-left">
+          <%= yield :left %> 
+        </div>
+      <% end %>
+    </div>
   </body>
 </html>

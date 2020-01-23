@@ -1,0 +1,6 @@
+.recipe-card
+  = @recipe.title
+  .description
+    %img(src="#{@recipe.image_link}")
+    .instruction
+      = @recipe.instructions

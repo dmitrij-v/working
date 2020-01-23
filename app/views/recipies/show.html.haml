@@ -3,4 +3,4 @@
   .description
     %img(src="#{@recipe.image_link}")
     .instruction
-      = @recipe.instructions
+      = render partial: 'step', collection: @recipe.steps

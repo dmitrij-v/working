@@ -13,7 +13,7 @@ Recipe.create(
   time_for_cooking: 45,
   servings: 4,
   instructions: "Heat 2 tbsp of butter in a small pan over medium heat.\nAdd pineapple and brown sugar and saut until golden turning once - about 3 minutes per side.\nRemove from heat and set aside.\nAssemble sandwiches by placing dividing cheese amongst four slices of bread.\nNext stack some ham followed by a roughly three slices of pineapple and top with a few jalapeno slices.\nClose the sandwich with another slice of bread.\nIn a large pan heat the rest of the butter and olive oil over medium heat.\nAdd sandwiches to the pan and fry until golden brown - about 3 minutes per side.\nSlide onto a plate and slice diagonally.\nServe immediately with a bowl of piping hot soup.",
-  image_link: "https://spoonacular.com/recipeImages/612235-556x370.jpg",
+  image_link: "https://spoonacular.com/recipeImages/646368-556x370.png",
   original_source: "https://www.foodista.com/recipe/6SP7DK25/hawaiian-grilled-cheese"
   )
 Recipe.create(

@@ -12,7 +12,7 @@ class RequestService
     # req['x-rapidapi-host'] = 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
     # req['x-rapidapi-key'] = 'b14720ae09msh92bfb8ca8ce34fdp1e1f52jsne73dfd1bd03e'
     # http = Net::HTTP.new(uri.host, uri.port)
-    # http.use_ssl = true 
+    # http.use_ssl = true
     # response = http.request(req)
     # parce = JSON.parse(response.body)
 

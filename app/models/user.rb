@@ -16,6 +16,6 @@ class User < ApplicationRecord
   private
 
   def check_telegram
-    self.update(level: 0)
+    update(level: 0)
   end
 end

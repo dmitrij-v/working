@@ -1,4 +1,4 @@
-User.create(email: 'test@mail.com', password: 123123)
+User.create(email: 'test@mail.com', password: 123123, level: 3)
 
 Recipe.create(
   title: "Peanut Butter Breakfast Shake",

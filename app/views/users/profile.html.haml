@@ -2,6 +2,7 @@
   = render partial: 'partials/local_navigation'
   %h2 Your Profile
   .info-block
+    = render partial: 'info_line', locals: { caption: 'Status', value: current_user.level }
     = render partial: 'info_line', locals: { caption: 'Email', value: current_user.email }
     = render partial: 'info_line', locals: { caption: 'Login', value: current_user.login }
     = render partial: 'info_line', locals: { caption: 'Name', value: current_user.first_name }

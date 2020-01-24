@@ -9,4 +9,17 @@
 }
 .recipe-card {
   width: 600px;
+  .ingredient {
+    display: flex;
+    justify-content: flex-start;
+    .title {
+      width: 150px;
+    }
+    .amount {
+      width: 300px;
+    }
+    .consitency {
+      width: 150px;
+    }
+  }
 }

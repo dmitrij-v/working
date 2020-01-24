@@ -1,6 +1,11 @@
 .recipe-card
-  = @recipe.title
+  %h2
+    = @recipe.title
   .description
     %img(src="#{@recipe.image_link}")
+    .ingredients
+      %h2 Ingredients
+      = render partial: 'ingredient', collection: @recipe.ingredients
     .instruction
+      %h2 Instruction
       = render partial: 'step', collection: @recipe.steps

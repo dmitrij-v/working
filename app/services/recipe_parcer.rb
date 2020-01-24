@@ -70,7 +70,7 @@ class RecipeParcer
       old_ingredient = recipe.ingredients.find_by(title: ingredient[:ingredient][:title])
       return old_ingredient if old_ingredient
 
-      type = IngredientCategory.find_or_create_by_(title: ingredient[:type])
+      type = IngredientCategory.find_or_create_by(title: ingredient[:type])
 
       ingredient[:ingredient][:ingredient_category_id] = type.id
       recipe.ingredients.create(ingredient[:ingredient])

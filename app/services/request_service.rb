@@ -23,4 +23,42 @@ class RequestService
     parce = JSON.parse(response.body)
     RecipeParcer.new(parce).parce
   end
+
+  def day_menu
+    uri = URI.parse('http://localhost:3002/day')
+    req = Net::HTTP::Get.new(uri)
+    http = Net::HTTP.new(uri.host, uri.port)
+    response = http.request(req)
+    parce = JSON.parse(response.body)
+    parce.map{ |recipe| RecipeParcer.new(recipe).parce }
+  end
+
+  def day_list
+    uri = URI.parse('http://localhost:3002/day_list')
+    req = Net::HTTP::Get.new(uri)
+    http = Net::HTTP.new(uri.host, uri.port)
+    response = http.request(req)
+    parce = JSON.parse(response.body)
+    list = MenuParcer.new(parce).parce
+  end
+
+  def full_parce_daily_menu
+    response = send_request('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate', { timeFrame: 'day', targetCalories: 2000 })
+    list = MenuParcer.new(response).parce.join(',')
+    response = send_request('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/informationBulk', { ids: list })
+    response.map{ |recipe| RecipeParcer.new(recipe).parce }
+  end
+
+  def send_request(url, params=nil)
+    uri = URI.parse(url)
+    uri.query = URI.encode_www_form(params)
+    req = Net::HTTP::Get.new(uri)
+    req['x-rapidapi-host'] = ENV['X_RAPIDAPI_HOST']
+    req['x-rapidapi-key'] = ENV['X_RAPIDAPI_KEY']
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    response = http.request(req)
+
+    return JSON.parse(response.body)
+  end
 end

@@ -1,9 +1,8 @@
 .main-content
-  "Profile"
-  - if current_user
-    .hello
-      = current_user.email
-    = link_to "Sign Out", destroy_user_session_path, method: :delete
-  - else
-    = link_to "Sign In", new_user_session_path
-    = link_to  "Sign Up", new_user_registration_path
+  = render partial: 'partials/local_navigation'
+  %h2 Your Profile
+  .info-block
+    = render partial: 'info_line', locals: { caption: 'Email', value: current_user.email }
+    = render partial: 'info_line', locals: { caption: 'Login', value: current_user.login }
+    = render partial: 'info_line', locals: { caption: 'Name', value: current_user.first_name }
+  = link_to "Log Out", destroy_user_session_path, method: :delete

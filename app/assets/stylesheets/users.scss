@@ -1,3 +1,19 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.info-block {
+  width: 100%;
+  .info-line{
+    display: flex;
+    justify-content: flex-start;
+    .caption {
+      width: 200px;
+    }
+    .value {
+      width: 200px;
+    }
+    .buttons {
+      width: 200px;
+    }
+  }
+}

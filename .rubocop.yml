@@ -4,6 +4,8 @@ AllCops:
     - db/**/**
     - node_modules/**/**
     - bin/**/**
+    - config/initializers/**
+    - test/**/**
 Style/FrozenStringLiteralComment:
   Enabled: false
 Style/Documentation:

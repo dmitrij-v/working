@@ -1,6 +1,5 @@
 .recipe-card
-  .navigation
-    = link_to 'Main', root_path
+  = render partial: 'partials/local_navigation'
   %h2
     = @recipe.title
   .description

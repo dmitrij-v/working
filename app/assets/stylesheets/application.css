@@ -13,8 +13,13 @@
  *= require_tree .
  *= require_self
  */
+@font-face {
+  font-family: 'Pacifico';
+  src: url('Pacifico-Regular.ttf')
+}
 body {
   margin: 0;
+  font-family: 'Pacifico';
 }
 .main-header {
   width: 100%;
@@ -26,6 +31,7 @@ body {
 }
 .logo, .user-page {
   margin: 0 8px;
+  font-family: 'Pacifico';
 }
 .alert-messages {
   width: 100%;

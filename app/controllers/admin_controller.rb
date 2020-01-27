@@ -25,6 +25,16 @@ class AdminController < ApplicationController
   def update_recipe
     recipe = Recipe.find(params[:id])
     recipe.update(title: params[:recipe][:title])
+    recipe.steps.each do |step|
+      hash = params[:recipe][:steps_attributes].values.map{ |temp| temp if temp['id'] == step.id.to_s}.compact.first
+      puts ''
+      puts hash
+      puts ''
+      if hash
+        hash.delete('id') 
+        step.update(hash)
+      end
+    end
     redirect_to :show_admin_recipe
   end
 end

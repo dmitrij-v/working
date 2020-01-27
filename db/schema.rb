@@ -33,21 +33,6 @@ ActiveRecord::Schema.define(version: 2020_01_27_094656) do
     t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
   end
 
-  create_table "measures", force: :cascade do |t|
-    t.float "amount"
-    t.string "short_form"
-    t.string "full_form"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "products", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "recipe_steps", force: :cascade do |t|
     t.integer "number"
     t.string "description"

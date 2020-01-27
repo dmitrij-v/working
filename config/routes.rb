@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   get '/admin/recipe/', to: 'admin#recipe_index', as: 'show_admin_recipe_index'
   get '/admin/recipe/:id', to: 'admin#show_recipe', as: 'show_admin_recipe'
+  post '/admin/recipe/:id', to: 'admin#switch_public', as: 'switch_public_admin_recipe'
 end

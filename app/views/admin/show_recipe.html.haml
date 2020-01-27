@@ -1,7 +1,7 @@
 .show-recipe
   .buttons
     Edit
-    Public
+    = create_public_link(@recipe)
   .recipe-card
     %h2
       = @recipe.title

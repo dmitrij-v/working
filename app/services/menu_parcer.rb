@@ -4,8 +4,6 @@ class MenuParcer
   end
 
   def parce
-    @text['meals'].map{ |meal| meal['id'] }
+    @text['meals'].map { |meal| meal['id'] }
   end
-
-  private
 end

@@ -30,7 +30,7 @@ class RequestService
     http = Net::HTTP.new(uri.host, uri.port)
     response = http.request(req)
     parce = JSON.parse(response.body)
-    parce.map{ |recipe| RecipeParcer.new(recipe).parce }
+    parce.map { |recipe| RecipeParcer.new(recipe).parce }
   end
 
   def day_list
@@ -39,17 +39,24 @@ class RequestService
     http = Net::HTTP.new(uri.host, uri.port)
     response = http.request(req)
     parce = JSON.parse(response.body)
-    list = MenuParcer.new(parce).parce
+    MenuParcer.new(parce).parce
   end
 
   def full_parce_daily_menu
-    response = send_request('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate', { timeFrame: 'day', targetCalories: 2000 })
+    response = send_request(
+      'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate',
+      timeFrame:      'day',
+      targetCalories: 2000
+    )
     list = MenuParcer.new(response).parce.join(',')
-    response = send_request('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/informationBulk', { ids: list })
-    response.map{ |recipe| RecipeParcer.new(recipe).parce }
+    response = send_request(
+      'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/informationBulk',
+      ids: list
+    )
+    response.map { |recipe| RecipeParcer.new(recipe).parce }
   end
 
-  def send_request(url, params=nil)
+  def send_request(url, params = nil)
     uri = URI.parse(url)
     uri.query = URI.encode_www_form(params)
     req = Net::HTTP::Get.new(uri)
@@ -59,6 +66,6 @@ class RequestService
     http.use_ssl = true
     response = http.request(req)
 
-    return JSON.parse(response.body)
+    JSON.parse(response.body)
   end
 end

@@ -1,5 +1,6 @@
 .show-recipe
   .buttons
+    = link_to 'Back to list', show_admin_recipe_index_path
     = link_to 'Edit', edit_recipe_admin_recipe_path
     = create_public_link(@recipe)
   .recipe-card

@@ -1,0 +1,6 @@
+.edit-form
+  = form_for @recipe, url: update_recipe_admin_recipe_path(@recipe.id) do |f|
+    .line
+      Title:
+      = f.text_field :title
+    = f.submit

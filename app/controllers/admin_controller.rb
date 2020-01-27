@@ -17,4 +17,14 @@ class AdminController < ApplicationController
     recipe.update(public: !recipe.public)
     redirect_to :show_admin_recipe
   end
+
+  def edit_recipe
+    @recipe = Recipe.includes(:steps, :ingredients).find_by(id: params[:id])
+  end
+
+  def update_recipe
+    recipe = Recipe.find(params[:id])
+    recipe.update(title: params[:recipe][:title])
+    redirect_to :show_admin_recipe
+  end
 end

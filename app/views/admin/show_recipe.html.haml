@@ -1,6 +1,6 @@
 .show-recipe
   .buttons
-    Edit
+    = link_to 'Edit', edit_recipe_admin_recipe_path
     = create_public_link(@recipe)
   .recipe-card
     %h2

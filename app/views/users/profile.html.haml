@@ -1,6 +1,9 @@
 .main-content
   = render partial: 'partials/local_navigation'
   %h2 Your Profile
+  - if current_user.admin?
+    .admins-links
+      = link_to "Recipe list", show_admin_recipe_index_path
   .info-block
     = render partial: 'info_line', locals: { caption: 'Status', value: current_user.level }
     = render partial: 'info_line', locals: { caption: 'Email', value: current_user.email }

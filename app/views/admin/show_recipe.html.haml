@@ -1,0 +1,15 @@
+.show-recipe
+  .buttons
+    Edit
+    Public
+  .recipe-card
+    %h2
+      = @recipe.title
+    .description
+      %img(src="#{@recipe.image_link}")
+      .ingredients
+        %h2 Ingredients
+        = render partial: 'recipies/ingredient', collection: @recipe.ingredients
+      .instruction
+        %h2 Instruction
+        = render partial: 'recipies/step', collection: @recipe.steps

@@ -5,4 +5,9 @@ class AdminController < ApplicationController
     return redirect_to :root unless current_user.admin?
     @recipies = Recipe.all
   end
+
+  def show_recipe
+    @recipe = Recipe.includes(:steps, :ingredients).find_by(id: params[:id])
+    return redirect_to :show_admin_recipe_index_path, alert: "I'm so sorry, but the recipe not found." unless @recipe
+  end
 end

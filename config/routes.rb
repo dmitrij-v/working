@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   # admin-panel
 
   get '/admin/recipe/', to: 'admin#recipe_index', as: 'show_admin_recipe_index'
+  get '/admin/recipe/:id', to: 'admin#show_recipe', as: 'show_admin_recipe'
 end

@@ -4,4 +4,9 @@ class UsersController < ApplicationController
   def profile
     @user = current_user
   end
+
+  def daily_menu
+    RequestService.new.full_parce_daily_menu
+    redirect_to :root
+  end
 end

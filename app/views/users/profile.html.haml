@@ -3,6 +3,7 @@
   %h2 Your Profile
   - if current_user.admin?
     .admins-links
+      = link_to "Get daily menu", daily_meny_path
       = link_to "Recipe list", show_admin_recipe_index_path
   .info-block
     = render partial: 'info_line', locals: { caption: 'Status', value: current_user.level }

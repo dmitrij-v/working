@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'main#main'
 
   get '/profile',     to: 'users#profile'
+  get '/daily-meny',  to: 'users#daily_menu'
   get '/recipe/:id',  to: 'recipies#show', as: 'show_recipe'
 
   # admin-panel

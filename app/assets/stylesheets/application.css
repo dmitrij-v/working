@@ -39,3 +39,7 @@ body {
   justify-content: center;
   align-items: flex-start;
 }
+.main-footer {
+  height: 60px;
+  width: 100%;
+}

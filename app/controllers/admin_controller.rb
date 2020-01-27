@@ -3,6 +3,6 @@ class AdminController < ApplicationController
 
   def recipe_index
     return redirect_to :root unless current_user.admin?
-    @recipes = Recipe.all
+    @recipies = Recipe.all
   end
 end

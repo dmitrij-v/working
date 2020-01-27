@@ -1,2 +1,4 @@
 .recipe_list
   Recipe List
+  - @recipies.each do |recipe|
+    = render partial: "recipe_line", locals: { recipe: recipe }

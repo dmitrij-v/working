@@ -3,4 +3,13 @@
     .line
       Title:
       = f.text_field :title
+    .steps
+      = f.fields_for :steps do |step|
+        .step
+          .number
+            Number:
+            = step.text_field :number
+          .description
+            Description:
+            = step.text_area :description
     = f.submit

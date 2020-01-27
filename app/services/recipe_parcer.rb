@@ -21,7 +21,8 @@ class RecipeParcer
       servings:         @text['servings'],
       instructions:     @text['instructions'],
       image_link:       @text['image'],
-      original_source:  @text['sourceUrl']
+      original_source:  @text['sourceUrl'],
+      public:           false
     }
   end
 

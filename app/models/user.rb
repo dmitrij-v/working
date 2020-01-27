@@ -5,7 +5,7 @@ class User < ApplicationRecord
           :recoverable, :rememberable, :validatable
 
   has_many :notes
-  after_create :check_telegram
+  after_create :update_level
 
   enum level: { free: 0, author: 1, editor: 2, admin: 3 }
 
@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
   private
 
-  def check_telegram
+  def update_level
     update(level: 0)
   end
 end

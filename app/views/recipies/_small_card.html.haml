@@ -4,4 +4,5 @@
   .description
     %img(src="#{recipe.image_link}")
     %br
+    = recipe.instructions.truncate(200, separator: ' ')
     = link_to 'Show more...', show_recipe_path(recipe)

@@ -10,4 +10,10 @@ module ApplicationHelper
 
     nil
   end
+
+  def main_page_link
+    return link_to 'Main page', :root unless params[:action] == 'main' && params[:controller] == 'main'
+    
+    nil
+  end
 end

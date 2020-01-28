@@ -7,6 +7,7 @@ class RecipeParcer
     recipe = create_recipe(parce_recipe)
     create_steps(parce_steps, recipe)
     create_ingredients(parce_ingredients, recipe)
+    TranslationService.new(recipe).send_request
 
     recipe
   end

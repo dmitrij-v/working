@@ -1,5 +1,5 @@
 class RecipiesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:main]
 
   def show
     @recipe = Recipe.shown.includes(:steps, :ingredients).find_by(id: params[:id])

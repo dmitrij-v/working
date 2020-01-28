@@ -27,9 +27,6 @@ class AdminController < ApplicationController
     recipe.update(title: params[:recipe][:title])
     recipe.steps.each do |step|
       hash = params[:recipe][:steps_attributes].values.map{ |temp| temp if temp['id'] == step.id.to_s}.compact.first
-      puts ''
-      puts hash
-      puts ''
       if hash
         hash.delete('id') 
         step.update(hash)

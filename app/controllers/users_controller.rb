@@ -7,6 +7,6 @@ class UsersController < ApplicationController
 
   def daily_menu
     RequestService.new.full_parce_daily_menu
-    redirect_to :profile_path
+    redirect_to :profile
   end
 end

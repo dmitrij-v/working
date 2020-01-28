@@ -44,13 +44,13 @@ class RequestService
 
   def full_parce_daily_menu
     response = send_request(
-      'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate',
+      ENV['DAILY_MENU_ADRESS'],
       timeFrame:      'day',
       targetCalories: 2000
     )
     list = MenuParcer.new(response).parce.join(',')
     response = send_request(
-      'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/informationBulk',
+      ENV['RECIPE_ADRESS'],
       ids: list
     )
     response.map { |recipe| RecipeParcer.new(recipe).parce }
